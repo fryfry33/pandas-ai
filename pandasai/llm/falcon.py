@@ -29,22 +29,14 @@ class Falcon(HuggingFaceLLM):
 
     """
 
-    api_token: str
-    _api_url: str = (
-        "https://api-inference.huggingface.co/models/tiiuae/falcon-7b-instruct"
-    )
-    _max_retries: int = 5
 
-    def __init__(self, api_token: Optional[str] = None):
+    def __init__(self):
         """
         __init__ method of Falcon Class
         Args:
             api_token (str): API token from Huggingface platform
         """
-
-        self.api_token = api_token or os.getenv("HUGGINGFACE_API_KEY") or None
-        if self.api_token is None:
-            raise APIKeyNotFoundError("HuggingFace Hub API key is required")
+        return None
 
     @property
     def type(self) -> str:
